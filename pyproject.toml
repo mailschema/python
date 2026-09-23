@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mailschema"
+version = "0.1.2"
+description = "Schemas and validation tools for Mail Action Protocol and the MailSchema Registry"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "MailSchema contributors" }]
+dependencies = ["jsonschema[format]>=4.23,<5", "referencing>=0.35,<1"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://mailschema.org/tools/"
+Repository = "https://github.com/mailschema/python"
+Issues = "https://github.com/mailschema/python/issues"
+
+[project.scripts]
+mailschema = "mailschema.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mailschema"]
